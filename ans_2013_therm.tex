@@ -1,0 +1,202 @@
+%        File: wm_2013_therm.tex
+%     Created: Mon Aug 13 10:00 AM 2012 C
+%
+\documentclass[letterpaper]{article}
+\usepackage[top=1.0in,bottom=1.0in,left=1.0in,right=1.0in]{geometry}
+\usepackage{verbatim}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{longtable}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[usenames]{color}
+\usepackage[
+naturalnames = true, 
+colorlinks = true, 
+linkcolor = Black,
+anchorcolor = Black,
+citecolor = Black,
+menucolor = Black,
+urlcolor = Blue
+]{hyperref}
+\def\thesection       {\arabic{section}}
+\def\thesubsection     {\thesection.\alph{subsection}}
+
+%% To use the glossaries acronym package, you'll need to define any acronyms you intend to 
+%% use. You can define acronyms with \newacronym{label}[acronym]{written out form}
+%% To refer to them in the text use \gls{label}
+\usepackage[acronym,toc]{glossaries}
+\makeglossaries
+
+\author{Kathryn D. Huff
+\\ \href{mailto:khuff@anl.gov}{\texttt{khuff@anl.gov}}
+\\ 9700 S. Cass Ave
+}
+
+\date{}
+
+% concise yet adequately descriptive title
+\title{Rapid Determination of Thermal Repository Capacity For Arbitrary Waste Streams}
+\begin{document}
+\maketitle
+
+\input{acros}
+
+
+% 1) a descriptive title that will reflect the paper 
+%    and presentation content (define all acronyms); 
+% 2) a summary of the work conducted, 
+%    problem history and your results; 
+% 3) all authors contact information including mailing address, email addresses and phone 
+%    numbers; and 
+% 4) a brief description of the importance of the work 
+%    (what problem it addresises/solves) and its application/benefit to others.  
+
+
+% Abstracts should be between 400 - 800 words and comply with the 
+% criteria stated below. Results have shown that brief abstracts that fully and 
+% effectively convey the substance and their importance have the highest 
+% ranking. Background information irrelevant to an abstract’s merits may 
+% dilute the substance and lower the ranking. The evaluation criteria on the 
+% “Abstract Rating Form” is posted on the WM website www.wmsym.org
+% under the Presenters tab as a guide for authors. Insufficient information 
+% for the reviewers may result in session misplacement, lower ranking or 
+% abstract rejection.
+
+% 2. How is the technical problem, issue or program and its importance clearly described?                    
+% 3. How are the results or likely results of the investigation/solutions(s) to the problem or 
+%    issue described?
+%    5 - Very clearly described and supported
+%    4 - Above-average
+%    3 - Average and somewhat unfocused in specific details
+%    2 - Below-average
+%    1 - Abstract lacks a clear issue, focus and/or results
+% 4. What is the significance of the work/results described?               
+%    4 - Significant and widely applicable
+%    3 - Applicable to a previously difficult or specific problem or issue resolution
+%    2 - Incremental improvement to/status update of an already solved problem      
+%    1 –Addresses an already resolved problem     
+%    0 - Addresses no known or significant problem or issue by the reviewer
+%5. Is the work original and new or an expansion of prior work?             
+%    2 – Presents new work/results or new insight
+%    1 - Effectively builds on previous work/results
+%    0 - Nothing significantly new in work, program, issue resolution or results
+%6. How is the information discussed likely to be of interest to attendees? 
+%    4 - Will provide an excellent presentation and be a benefit to attendees
+%    3 - Will provide an above-average presentation
+%    2 - Will result in an average presentation
+%    1 - Will be a below-average presentation
+%7. Total of the Individual Reviewer’s Scores
+
+\section{Work Conducted}
+% Provide a summary of the work conducted:
+%      Describe the technical problem clearly
+%      support it with a method
+
+This work describes a method of rapid thermal repository capacity calcuation for 
+use in Cyder, a software library for coupled thermal and hydrologic repository 
+performance. This method employs a specific temperature change method and 
+resulted from the abstraction of more detailed thermal analysis tools. A proof 
+of principle demonstration of this method application will also be described in 
+which <++> .
+Finally, the integration of this model with a fuel cycle simulation platform will be described.
+
+Component level and system level abstraction of detailed computational thermal 
+repository performance models has resulted in a dataset and associated specific 
+temperature change estimation algorithm for rapid estimation of temperature 
+increase near emplacement tunnels as a function of waste composition,
+near field thermal conductivity, and near field thermal diffusitivity. 
+
+This rapid specific temperature change model has been implemented in Cyder, 
+a software library of interchangeable 
+radionuclide transport models appropriate for representing natural and 
+engineered barrier components of generic geology repository concepts.
+Cyder is an open source library intended for integration with the 
+Cyclus Fuel Cycle Simulator, but with an interface suitable for linking to other 
+tools or for use as a stand-alone repository behavior calculation engine. 
+
+The Cyder software library integrates with 
+the Cyclus computational fuel cycle systems analysis platform in order to 
+calculate repository performance metrics with respect to candidate fuel cycle 
+options \cite{huff_cyder_2012,huff_cyclus:_2010}. By abstraction of more 
+detailed thermal models, Cyder aims to capture the dominant 
+physics of thermal phenomena affecting repository performance in 
+various geologic media and as a function of spent fuel composition.
+
+\section{Motivation}
+% Provide a brief description of the importance of the work (what problem it 
+%   addresses/solves):
+Thermal evolution of a geologic repository is a strong function 
+of spent fuel composition, which varies among alternative fuel cycles. For this 
+reason, a generic disposal model capable of integration with a systems analysis 
+framework is necessary to illuminate performance distinctions of candidate 
+repository geologies, designs, and engineering components in the context of fuel 
+cycle options. 
+
+A generic repository model appropriate for systems analysis must emphasize 
+modularity and speed while providing modeling options at various levels of 
+detail. Sensitivity analyses and abstraction efforts conducted to develop the 
+models described in this work sought to capture the dominant physics of detailed 
+repository behaviors so that abstracted models can be robustly and flexibly 
+implemented in the Cyder disposal environment library without sacrificing the 
+simulation speed required by the Cyclus fuel cycle simulator.
+
+\section{Results}
+% Provide your results:
+%       clearly
+
+The result of this work is a mulitdimensional database of repository temperature 
+change per mass of high heat contributing isotopes 
+
+consist of four models that are the product of an 
+abstraction effort with more detailed tools. Results of unit tests and 
+benchmarking efforts will be described as will a proof of principle base case 
+demonstration of the use of these models. The base case concept has used these 
+tools to model a generic, isotropic, permeable porous geological medium with 
+reducing geochemistry as well as waste form, waste package, and buffer models in 
+the near field.
+
+The analytic models modified by abstraction and implemented in Cyder include a 
+degradation rate model, a mixed cell model, a response function model, and a 
+one dimensional solution (Brenner, 1962) to the advection-dispersion equation.
+
+The degradation rate model simulates the fractional degradation of the material 
+containment properties is the simplest of implemented models and is most 
+appropriate for simplistic waste package failure modeling. 
+
+Slightly more complex, and suited to representating waste form and buffer 
+components, the mixed cell model incorporates solubility limited, congruent 
+release under the influence of elemental partitioning coefficients and diffusion 
+coefficients as well as advective velocity. Abstraction results concerning the 
+transition between primarily diffusive and primarily advective transport regimes 
+was used for benchmarking and iterative accuracy improvements in the development 
+of this model.
+
+The lumped parameter, response function model implemented interchangeable piston flow, 
+exponential, and dispersion response functions and was developed by direct 
+calibration against the results of the abstraction effort.  
+
+Finally, abstraction results informed modifications implementation of an 
+analytic solution to the one dimensional advection-dispersion equation with 
+finite domain and Cauchy and Neumann boundary conditions at the inner and outer 
+boundaries, respectively. 
+
+\section{Importance to Others}
+
+The Cyder source code in which these models are implemented as well as 
+associated documentation are freely available for use by model developers in the 
+field of nuclear waste management. The application programming interface to this 
+software library is intentionally general to facilitate the incorporation of the 
+models presented here within software tools in need of a multicomponent repository 
+model.
+
+Furthermore, this work contributes to an expanding ecosystem of computational 
+models available for use with the Cyclus fuel cycle simulator. This hydrologic 
+nuclide transport library, by virtue of its capability to modularly integrate 
+with the Cyclus fuel cycle simulator has laid the foundation for integrated 
+disposal option analysis in the context of fuel cycle options. 
+
+\end{document}
+
+
