@@ -1,95 +1,34 @@
-%        File: wm_2013_therm.tex
+%        File: ans_2013_therm.tex
 %     Created: Mon Aug 13 10:00 AM 2012 C
 %
-\documentclass[letterpaper]{article}
-\usepackage[top=1.0in,bottom=1.0in,left=1.0in,right=1.0in]{geometry}
-\usepackage{verbatim}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{indentfirst}
-\usepackage{longtable}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage[usenames]{color}
-\usepackage[
-naturalnames = true, 
-colorlinks = true, 
-linkcolor = Black,
-anchorcolor = Black,
-citecolor = Black,
-menucolor = Black,
-urlcolor = Blue
-]{hyperref}
-\def\thesection       {\arabic{section}}
-\def\thesubsection     {\thesection.\alph{subsection}}
 
 %% To use the glossaries acronym package, you'll need to define any acronyms you intend to 
 %% use. You can define acronyms with \newacronym{label}[acronym]{written out form}
 %% To refer to them in the text use \gls{label}
+
+\documentclass{anstrans}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[acronym,toc]{glossaries}
 \makeglossaries
 
-\author{Kathryn D. Huff
-\\ \href{mailto:khuff@anl.gov}{\texttt{khuff@anl.gov}}
-\\ 9700 S. Cass Ave
-}
+% concise yet adequately descriptive title
+\title{Rapid Determination of Thermal Repository Capacity For Fuel Cycle Analysis}
+\author{Kathryn D.~Huff}
+
+%% uncomment these next five only if using anstrans
+\institute{Department of Nuclear Engineering \& Engineering Physics, University of Wisconsin, Madison, WI, 53706}
+\email{khuff@cae.wisc.edu}
+\usepackage{graphicx}
+\usepackage{booktabs} % nice rules for tables
+\usepackage{microtype} % if using PDF
+\newcommand{\units}[1] {\:\text{#1}}%
+\newcommand{\SN}{S$_N$}%{S$_\text{N}$}%{$S_N$}%
 
 \date{}
-
-% concise yet adequately descriptive title
-\title{Rapid Determination of Thermal Repository Capacity For Arbitrary Waste Streams}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-\maketitle
-
-\input{acros}
-
-
-% 1) a descriptive title that will reflect the paper 
-%    and presentation content (define all acronyms); 
-% 2) a summary of the work conducted, 
-%    problem history and your results; 
-% 3) all authors contact information including mailing address, email addresses and phone 
-%    numbers; and 
-% 4) a brief description of the importance of the work 
-%    (what problem it addresises/solves) and its application/benefit to others.  
-
-
-% Abstracts should be between 400 - 800 words and comply with the 
-% criteria stated below. Results have shown that brief abstracts that fully and 
-% effectively convey the substance and their importance have the highest 
-% ranking. Background information irrelevant to an abstract’s merits may 
-% dilute the substance and lower the ranking. The evaluation criteria on the 
-% “Abstract Rating Form” is posted on the WM website www.wmsym.org
-% under the Presenters tab as a guide for authors. Insufficient information 
-% for the reviewers may result in session misplacement, lower ranking or 
-% abstract rejection.
-
-% 2. How is the technical problem, issue or program and its importance clearly described?                    
-% 3. How are the results or likely results of the investigation/solutions(s) to the problem or 
-%    issue described?
-%    5 - Very clearly described and supported
-%    4 - Above-average
-%    3 - Average and somewhat unfocused in specific details
-%    2 - Below-average
-%    1 - Abstract lacks a clear issue, focus and/or results
-% 4. What is the significance of the work/results described?               
-%    4 - Significant and widely applicable
-%    3 - Applicable to a previously difficult or specific problem or issue resolution
-%    2 - Incremental improvement to/status update of an already solved problem      
-%    1 –Addresses an already resolved problem     
-%    0 - Addresses no known or significant problem or issue by the reviewer
-%5. Is the work original and new or an expansion of prior work?             
-%    2 – Presents new work/results or new insight
-%    1 - Effectively builds on previous work/results
-%    0 - Nothing significantly new in work, program, issue resolution or results
-%6. How is the information discussed likely to be of interest to attendees? 
-%    4 - Will provide an excellent presentation and be a benefit to attendees
-%    3 - Will provide an above-average presentation
-%    2 - Will result in an average presentation
-%    1 - Will be a below-average presentation
-%7. Total of the Individual Reviewer’s Scores
-
-\section{Work Conducted}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
 % Provide a summary of the work conducted:
 %      Describe the technical problem clearly
 %      support it with a method
@@ -142,7 +81,8 @@ repository behaviors so that abstracted models can be robustly and flexibly
 implemented in the Cyder disposal environment library without sacrificing the 
 simulation speed required by the Cyclus fuel cycle simulator.
 
-\section{Results}
+
+\section{Results and Analysis}
 % Provide your results:
 %       clearly
 
@@ -182,8 +122,8 @@ analytic solution to the one dimensional advection-dispersion equation with
 finite domain and Cauchy and Neumann boundary conditions at the inner and outer 
 boundaries, respectively. 
 
-\section{Importance to Others}
-
+\section{Conclusions}
+% Was: Importance to Others - Replace with a conclusion.
 The Cyder source code in which these models are implemented as well as 
 associated documentation are freely available for use by model developers in the 
 field of nuclear waste management. The application programming interface to this 
@@ -197,6 +137,11 @@ nuclide transport library, by virtue of its capability to modularly integrate
 with the Cyclus fuel cycle simulator has laid the foundation for integrated 
 disposal option analysis in the context of fuel cycle options. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\nocite{<+ +>}
+\bibliographystyle{ans}
+\bibliography{bibliography}
 \end{document}
+
 
 
