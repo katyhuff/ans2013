@@ -13,11 +13,12 @@
 
 % concise yet adequately descriptive title
 \title{Rapid Determination of Thermal Repository Capacity For Fuel Cycle Analysis}
-\author{Kathryn D.~Huff}
+\author{Kathryn D.~Huff$^1$, Alexander T. Bara$^2$}
 
 %% uncomment these next five only if using anstrans
-\institute{Department of Nuclear Engineering \& Engineering Physics, University of Wisconsin, Madison, WI, 53706}
-\email{khuff@cae.wisc.edu}
+\institute{$^1$Univ. of Wisconsin, 1500 Engineering Dr., Madison, WI, 53706\\ 
+\& Argonne National Laboratory, 9700 S. Cass Ave., Lemont, IL, khuff@anl.gov\\
+$^2$Univ. of Illinois, Urbana Champaign, IL, 61801, bara1@illinois.edu}
 \usepackage{graphicx}
 \usepackage{booktabs} % nice rules for tables
 \usepackage{microtype} % if using PDF
@@ -33,21 +34,23 @@
 %      Describe the technical problem clearly
 %      support it with a method
 
-This work describes a method of rapid thermal repository capacity calcuation for 
-use in Cyder, a software library for coupled thermal and hydrologic repository 
-performance. This method employs a specific temperature change method and 
-resulted from the abstraction of more detailed thermal analysis tools. A proof 
-of principle demonstration of this method application will also be described in 
-which <++> .
-Finally, the integration of this model with a fuel cycle simulation platform will be described.
+A method of rapid thermal repository capacity calcuation for use in Cyder, a 
+software library for coupled thermal and hydrologic repository performance 
+analysis is described. Integration of Cyder with the Cyclus fuel cycle simulator 
+is also described. A proof of principle demonstration is also presented, in 
+which the rapid calculation method described here is benchmarked against results 
+of more detailed models.
 
-Component level and system level abstraction of detailed computational thermal 
-repository performance models has resulted in a dataset and associated specific 
-temperature change estimation algorithm for rapid estimation of temperature 
-increase near emplacement tunnels as a function of waste composition,
-near field thermal conductivity, and near field thermal diffusitivity. 
+This method employs a specific temperature change method \cite{radel} and has 
+resulted from combining detailed spent nuclear fuel composition data with 
+detailed thermal repository performance analysis 
+tools from \gls{LLNL} and \gls{ANL}\cite{radel,llnl,sinda}.
 
-This rapid specific temperature change model has been implemented in Cyder, 
+Abstraction of detailed computational thermal repository performance model 
+results has resulted in a dataset and associated specific temperature change 
+estimation algorithm. This algorithm is capable of rapid estimation of temperature increase near 
+emplacement tunnels as a function of waste composition, near field thermal 
+conductivity, and near field thermal diffusitivity.  This method has been implemented in Cyder, 
 a software library of interchangeable 
 radionuclide transport models appropriate for representing natural and 
 engineered barrier components of generic geology repository concepts.
@@ -68,18 +71,17 @@ various geologic media and as a function of spent fuel composition.
 %   addresses/solves):
 Thermal evolution of a geologic repository is a strong function 
 of spent fuel composition, which varies among alternative fuel cycles. For this 
-reason, a generic disposal model capable of integration with a systems analysis 
-framework is necessary to illuminate performance distinctions of candidate 
-repository geologies, designs, and engineering components in the context of fuel 
-cycle options. 
+reason, a generic disposal model capable of dynamic integration with a systems analysis 
+framework is necessary to illuminate capacity constraints and dynamic 
+feedback effects of candidate repository geologies in the context of fuel cycle options.
 
 A generic repository model appropriate for systems analysis must emphasize 
 modularity and speed while providing modeling options at various levels of 
-detail. Sensitivity analyses and abstraction efforts conducted to develop the 
-models described in this work sought to capture the dominant physics of detailed 
-repository behaviors so that abstracted models can be robustly and flexibly 
-implemented in the Cyder disposal environment library without sacrificing the 
-simulation speed required by the Cyclus fuel cycle simulator.
+detail. Parameterized simulations and abstraction efforts conducted to develop 
+the method described in this work sought to capture the dominant physics of 
+thermal repository capacity assessment so that the Cyder disposal environment 
+library could meet the simulation speed required by the Cyclus fuel cycle 
+simulator.
 
 
 \section{Results and Analysis}
@@ -138,7 +140,7 @@ with the Cyclus fuel cycle simulator has laid the foundation for integrated
 disposal option analysis in the context of fuel cycle options. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\nocite{<+ +>}
+%\nocite{*}
 \bibliographystyle{ans}
 \bibliography{bibliography}
 \end{document}
