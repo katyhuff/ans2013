@@ -1,0 +1,59 @@
+  % table?
+  Important heat limits in materials of the repository restrict loading designs 
+  and capacity.
+  \input{heat_tab}
+
+  Similar heat transport models can be used for all geologies, but are 
+  differentiated by material parameters $(c_p, K, \rho)$ and varying 
+  thermal limits.
+
+To inform dynamic behavior within the simulator, the repository requires 
+a transient model capable of quickly arriving at a heat based 
+capacity for an arbitrary waste stream. 
+\begin{figure}[htp]
+  \begin{center}
+    \includegraphics[width=0.7\columnwidth]{cyclus/images/sinkfacility.eps}
+  \end{center}
+  \caption{\footnotesize{The Cyder repository model has the same interface with the simulation 
+  as does a sink facility. It receives materials according to some capacity. The 
+  heat-limited capacity of the repository will be reassessed for new waste 
+  streams offered to the repository.}}
+  \label{fig:cydersink}
+\end{figure}
+
+\subsubsection{Specific Temperature Change Method}
+Introduced by Radel, Wilson et. al., the Specific Temperature Change method uses 
+a linear approximation to arrive at the thermal loading density limit.  
+When the thermal time constant of the rock is much shorter than the waste form 
+decay package, the change in package wall temperature can be described by 
+
+\begin{align}
+q(t_0)\rho_{limit}C'&=\Delta T_1
+\intertext{where}
+\rho_{limit} &= \frac{C_1}{Q_1}\nonumber\\
+C' &= \mbox{ Thermal constant }[-]\nonumber\\
+\Delta T &= \mbox{ Constant difference between }T_{lim}\mbox{ and }T_{amb}[^{\circ}C]\nonumber\\
+T_{lim} &= \mbox{ Temperature limit }[^{\circ}C]\nonumber\\
+T_{amb} &= \mbox{ Ambient rock temperature }[^{\circ}C]\nonumber
+\end{align}
+
+
+\begin{figure}[htp!]
+\begin{center}
+\includegraphics[width=0.8\columnwidth]{cyder/images/fakeArbitraryWF.eps}
+\end{center}
+\caption{\footnotesize{As a demonstration of the calculation procedure, the specific 
+temperature change curves, $\Delta t$, are calculated for heat contributing 
+isotopes at a 
+specified repository spacing, $s$, heat limit radius, $r_{lim}$, and thermal paramters 
+$\alpha_{th}$ and $K_{th}$. The total temperature change is the sum of the 
+mass scaled curves $\Delta T$.}}
+\label{fig:fakeArbitraryWF}
+\end{figure}
+
+Repeated runs of a detailed analytic model have given a dataset that 
+facilitates estimation of thermal loading capacity for a range of thermal 
+diffusitivities, conductivities, and repository layouts.
+\input{thermal_cases}
+
+\input{llnlbackground}
