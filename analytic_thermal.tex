@@ -12,7 +12,7 @@ a transient model capable of quickly arriving at a heat based
 capacity for an arbitrary waste stream. 
 \begin{figure}[htp]
   \begin{center}
-    \includegraphics[width=0.7\columnwidth]{cyclus/images/sinkfacility.eps}
+    \includegraphics[width=0.7\columnwidth]{./images/sinkfacility.eps}
   \end{center}
   \caption{\footnotesize{The Cyder repository model has the same interface with the simulation 
   as does a sink facility. It receives materials according to some capacity. The 
@@ -32,7 +32,7 @@ q(t_0)\rho_{limit}C'&=\Delta T_1
 \intertext{where}
 \rho_{limit} &= \frac{C_1}{Q_1}\nonumber\\
 C' &= \mbox{ Thermal constant }[-]\nonumber\\
-\Delta T &= \mbox{ Constant difference between }T_{lim}\mbox{ and }T_{amb}[^{\circ}C]\nonumber\\
+\Delta T &= T_{lim}-T_{amb}[^{\circ}C]\nonumber\\
 T_{lim} &= \mbox{ Temperature limit }[^{\circ}C]\nonumber\\
 T_{amb} &= \mbox{ Ambient rock temperature }[^{\circ}C]\nonumber
 \end{align}
@@ -40,7 +40,7 @@ T_{amb} &= \mbox{ Ambient rock temperature }[^{\circ}C]\nonumber
 
 \begin{figure}[htp!]
 \begin{center}
-\includegraphics[width=0.8\columnwidth]{cyder/images/fakeArbitraryWF.eps}
+\includegraphics[width=0.8\columnwidth]{images/fakeArbitraryWF.eps}
 \end{center}
 \caption{\footnotesize{As a demonstration of the calculation procedure, the specific 
 temperature change curves, $\Delta t$, are calculated for heat contributing 
