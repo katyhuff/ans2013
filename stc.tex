@@ -1,0 +1,59 @@
+
+
+\subsubsection{Specific Temperature Change Method}
+Introduced by Radel, Wilson et. al., the Specific Temperature Change method uses 
+a linear approximation to arrive at the thermal loading density limit.  
+When the thermal time constant of the rock is much shorter than the waste form 
+decay package, the change in package wall temperature can be described by 
+
+\begin{align}
+\Delta T_1 &= q(t_0)\rho_{limit}C'
+\intertext{where}
+\Delta T_1 &= T_{lim} - T_{amb} \nonumber\\
+T_{lim} &= \mbox{ Temperature limit }[^{\circ}C]\nonumber\\
+T_{amb} &= \mbox{ Ambient rock temperature }[^{\circ}C]\nonumber\\
+q(t_0) &= \mbox{ Heat at the inital time} \nonumber \\
+\rho_{limit} &= \frac{C_1}{Q_1}\nonumber\\
+C' &= \mbox{ Thermal constant }[-]\nonumber\\
+\Delta T &= T_{lim}-T_{amb}[^{\circ}C]\nonumber\\
+\end{align}
+
+\begin{figure}[htp!]
+\begin{center}
+\includegraphics[width=0.8\columnwidth]{images/CmScaling.eps}
+\end{center}
+\caption{As a demonstration of the calculation procedure, the temperature change 
+  curve for one intial gram of $^{242}Cm$ and is scaled to represent $25.9g$, 
+  approximately the $^{242}Cm$ inventory per MTHM in 51GWd burnum UOX PWR fuel. }
+\label{fig:CmScaling}
+\end{figure}
+
+Figure \ref{fig:CmScaling} demonstrates the scaling of an STC curve to represent 
+the heat from $25.9g$ of initial $^{242}Cm$. For an arbitrary waste stream 
+composition, scaled curves calculated in this manner can be superimposed for 
+each heat generating isotope to arrive at an approximate total temperature 
+change at the calculation radius. This is demonstrated in figure 
+\ref{fig:fakeArbitraryWF}.
+
+\begin{figure}[htp!]
+\begin{center}
+\includegraphics[width=0.8\columnwidth]{images/fakeArbitraryWF.eps}
+\end{center}
+\caption{As a demonstration of the calculation procedure, the temperature change 
+  curve for one intial gram of $^{242}Cm$ and is scaled to represent $25.9g$, 
+  approximately the $^{242}Cm$ inventory per MTHM in 51GWd burnum UOX PWR fuel. }
+\label{fig:fakeArbitraryWF}
+\end{figure}
+
+To support this calculation in Cyder, a reference data set of temperature change 
+curves, $\Delta t$, were calculated for high heat contributing isotopes. These 
+curves were calclated as a function of specified repository spacing, $S$, heat limit radius, $r_{lim}$, and thermal paramters $\alpha_{th}$ and $K_{th}$. The total temperature change is the sum of the mass scaled curves $\Delta T$.
+
+\input{thermal_cases}
+
+Repeated runs of a detailed analytic model over the range of values in Table 
+\ref{tab:thermal_cases} have given a dataset that 
+facilitates estimation of thermal loading capacity for a range of thermal 
+diffusitivities, conductivities, and repository layouts. Simple linear 
+interpolation across the discrete parameter space provides a simple thermal 
+reference dataset for use in Cyder.

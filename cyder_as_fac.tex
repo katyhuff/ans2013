@@ -1,0 +1,21 @@
+\subsubsection{Cyder Integration With Cyclus}
+  Important heat limits in materials of the repository restrict loading designs 
+  and capacity.
+  \input{heat_tab}
+
+  Similar heat transport models can be used for all geologies, but are 
+  differentiated by material parameters $(K_{th}, \alpha_{th})$ and varying 
+  thermal limits.
+
+To inform dynamic behavior within the simulator, the repository requires 
+a transient model capable of quickly arriving at a heat based 
+capacity for an arbitrary waste stream. 
+
+More specifically, the Cyder repository model is a type of Facility within 
+Cyclus and interfaces with the simulation by requesting materials from the fuel 
+cycle facilities operating simultaneously with it. It the receives materials 
+according to the capacity that it defines. In the case of Cyder, the 
+heat-limited capacity of the repository will be reassessed for each new waste 
+stream composition offered to the repository.
+
+
