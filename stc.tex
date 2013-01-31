@@ -18,6 +18,9 @@ C' &= \mbox{ Thermal constant }[-]\nonumber\\
 \Delta T &= T_{lim}-T_{amb}[^{\circ}C]\nonumber\\
 \end{align}
 
+Figure \ref{fig:CmScaling} demonstrates the scaling of an STC curve to represent 
+the heat from $25.9g$ of initial $^{242}Cm$. 
+
 \begin{figure}[htp!]
 \begin{center}
 \includegraphics[width=\columnwidth]{images/CmScaling.eps}
@@ -28,22 +31,10 @@ C' &= \mbox{ Thermal constant }[-]\nonumber\\
 \label{fig:CmScaling}
 \end{figure}
 
-Figure \ref{fig:CmScaling} demonstrates the scaling of an STC curve to represent 
-the heat from $25.9g$ of initial $^{242}Cm$. For an arbitrary waste stream 
+For an arbitrary waste stream 
 composition, scaled curves calculated in this manner can be superimposed for 
 each heat generating isotope to arrive at an approximate total temperature 
-change at the calculation radius. This is demonstrated in figure 
-\ref{fig:fakeArbitraryWF}.
-
-\begin{figure}[htp!]
-\begin{center}
-\includegraphics[width=\columnwidth]{images/fakeArbitraryWF.eps}
-\end{center}
-\caption{As a demonstration of the calculation procedure, scaled temperature change 
-  curves for two isotopes are superimposed to achieve a total temperature 
-change.}
-\label{fig:fakeArbitraryWF}
-\end{figure}
+change at the calculation radius. 
 
 To support this calculation in Cyder, a reference data set of temperature change 
 curves, $\Delta t_i$, were calculated for high heat contributing isotopes. These 
@@ -60,11 +51,17 @@ m_i &= \mbox{ mass of isotope i  } [g]\nonumber\\
 \Delta t_i(r,S,K_{th},\alpha_{th}) &= \mbox{ temperature change due to 1 g of i }[^{\circ}K]\nonumber
 \label{superposition}
 \end{align}
-\input{thermal_cases}
 
-Repeated runs of a detailed analytic model over the range of values in Table 
-\ref{tab:thermal_cases} have given a dataset that 
-facilitates estimation of thermal loading capacity for a range of thermal 
-diffusitivities, conductivities, and repository layouts. Simple linear 
-interpolation across the discrete parameter space provides a simple thermal 
-reference dataset for use in Cyder.
+The use of this superposition is demonstrated in Figure 
+\ref{fig:fakeArbitraryWF}.
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\columnwidth]{images/fakeArbitraryWF.eps}
+\end{center}
+\caption{As a demonstration of the calculation procedure, scaled temperature change 
+  curves for two isotopes are superimposed to achieve a total temperature 
+change.}
+\label{fig:fakeArbitraryWF}
+\end{figure}
+
