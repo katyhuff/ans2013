@@ -54,10 +54,11 @@ media and as a function of spent fuel composition.
 
 Abstraction based on detailed computational thermal repository performance 
 calculations has resulted in a Specific Temperature Change (STC) estimation 
-implementation and a supporting reference dataset.
-This method is capable of rapid estimation of temperature increase near 
-emplacement tunnels as a function of waste composition, waste package spacing, 
-near field thermal conductivity, and near field thermal diffusitivity.
+implementation and a supporting reference dataset.  This method is capable of 
+rapid estimation of temperature increase near emplacement tunnels as a function 
+of waste composition, limiting radius, $r$, waste package spacing, $S$, near 
+field thermal conductivity, $K_{th}$, and near field thermal diffusitivity, 
+$\alpha_{th}$.
 
 \section{Motivation}
 % Provide a brief description of the importance of the work (what problem it 
@@ -66,8 +67,11 @@ near field thermal conductivity, and near field thermal diffusitivity.
 The United States is simultaneously considering a number of domestic nuclear 
 fuel cycle and geologic disposal options.  These decisions are technologically 
 coupled by repository capacity. That is, the thermal capacity of a geologic 
-repository is a strong function of site geology thermal parameters as well as 
-spent fuel composition, which varies among alternative fuel cycles. 
+repository is a strong function of site geology thermal parameters (see Table 
+\ref{tab:heat_tab}) as well as spent fuel composition, which varies among 
+alternative fuel cycles. 
+
+\input{heat_tab}
 
 To inform research and development in this coupled system, a generic geologic disposal 
 performance model capable of dynamic integration with a systems analysis 

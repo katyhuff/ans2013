@@ -46,9 +46,20 @@ change.}
 \end{figure}
 
 To support this calculation in Cyder, a reference data set of temperature change 
-curves, $\Delta t$, were calculated for high heat contributing isotopes. These 
-curves were calclated as a function of specified repository spacing, $S$, heat limit radius, $r_{lim}$, and thermal paramters $\alpha_{th}$ and $K_{th}$. The total temperature change is the sum of the mass scaled curves $\Delta T$.
+curves, $\Delta t_i$, were calculated for high heat contributing isotopes. These 
+curves were calclated as a function of specified repository spacing, $S$, heat 
+limit radius, $r_{lim}$, and thermal paramters $\alpha_{th}$ and $K_{th}$. The 
+total temperature change is the sum of the mass scaled curves,
 
+\begin{align}
+\Delta T &\sim \sum_{i\in H} m_i \Delta t_i(r,S,K_{th},\alpha_{th})
+\intertext{where}
+\Delta T &= \mbox{ total temperature change in waste }[^{\circ}K]\nonumber\\
+H &= \mbox{ set of high heat isotopes }[-]\nonumber\\
+m_i &= \mbox{ mass of isotope i  } [g]\nonumber\\
+\Delta t_i(r,S,K_{th},\alpha_{th}) &= \mbox{ temperature change due to 1 g of i }[^{\circ}K]\nonumber
+\label{superposition}
+\end{align}
 \input{thermal_cases}
 
 Repeated runs of a detailed analytic model over the range of values in Table 
