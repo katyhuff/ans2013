@@ -13,7 +13,7 @@
 \makeglossaries
 
 % concise yet adequately descriptive title
-\title{Rapid Determination of Thermal Repository Capacity For Fuel Cycle Analysis}
+\title{Dynamic Determination of Thermal Repository Capacity For Fuel Cycle Analysis}
 \author{Kathryn D.~Huff$^1$, Alexander T. Bara$^2$}
 
 %% uncomment these next five only if using anstrans
@@ -40,21 +40,21 @@ calcuation implemented in Cyder, a software library for coupled thermal and
 hydrologic repository performance analysis, is described. Integration of Cyder 
 with the Cyclus fuel cycle simulator is also described. Finally, a proof of 
 principle demonstration is presented in which the rapid calculation method 
-described here is benchmarked against results of a more detailed model.
+described here is compared with results of a more detailed model.
 
-This algorithm employs a specific temperature change method 
+This algorithm employs a \gls{STC} method 
 \cite{radel_repository_2007} and has 
-resulted from combining detailed spent nuclear fuel composition data with 
-detailed thermal repository performance analysis tools from the \gls{UFD} 
-campaign, \gls{LLNL}, and 
-\gls{ANL}\cite{greenberg_application_2012,gaski_sinda_1987,carter_fuel_2011}. By 
+resulted from combining detailed spent nuclear fuel composition data 
+\cite{carter_fuel_2011} with a
+detailed thermal repository performance analysis tool from 
+\gls{LLNL} and the \gls{UFD} campaign \cite{greenberg_application_2012}. By 
 abstraction of and benchmarking against these detailed thermal models, Cyder captures the dominant 
 physics of thermal phenomena affecting repository capacity in various geologic 
 media and as a function of spent fuel composition.
 
 Abstraction based on detailed computational thermal repository performance 
-calculations has resulted in a Specific Temperature Change (STC) estimation 
-implementation and a supporting reference dataset.  This method is capable of 
+calculations has resulted in implementation of the \gls{STC} estimation 
+algorithm and a supporting reference dataset.  This method is capable of 
 rapid estimation of temperature increase near emplacement tunnels as a function 
 of waste composition, limiting radius, $r$, waste package spacing, $S$, near 
 field thermal conductivity, $K_{th}$, and near field thermal diffusitivity, 
@@ -65,13 +65,11 @@ $\alpha_{th}$.
 %   addresses/solves):
 
 The United States is simultaneously considering a number of domestic nuclear 
-fuel cycle and geologic disposal options.  These decisions are technologically 
+fuel cycle and geologic disposal options \cite{doe_strategy_2013}.  These decisions are technologically 
 coupled by repository capacity. That is, the thermal capacity of a geologic 
 repository is a strong function of site geology thermal parameters (see Table 
 \ref{tab:heat_tab}) as well as spent fuel composition, which varies among 
 alternative fuel cycles. 
-
-\input{heat_tab}
 
 To inform research and development in this coupled system, a generic geologic disposal 
 performance model capable of dynamic integration with a systems analysis 
@@ -80,6 +78,8 @@ effects of candidate repository geologies in the context of fuel cycle options.
 In answer to this need, the algorithm in this work has been implemented in the 
 Cyder software library which integrates with the Cyclus computational 
 fuel cycle systems analysis platform \cite{huff_cyder_2013,wilson_cyclus:_2012}. 
+
+\input{heat_tab}
 
 A generic repository model appropriate for systems analysis must emphasize 
 modularity and speed while providing modeling options at various levels of 
@@ -123,6 +123,8 @@ models available for use with the Cyclus fuel cycle simulator. This hydrologic
 nuclide transport library, by virtue of its capability to modularly integrate 
 with the Cyclus fuel cycle simulator has laid the foundation for integrated 
 disposal option analysis in the context of fuel cycle options. 
+
+\input{acks}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\nocite{*}

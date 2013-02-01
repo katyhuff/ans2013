@@ -1,14 +1,15 @@
 \subsubsection{Cyder Integration With Cyclus}
 
 To inform dynamic behavior within the simulator, the repository requires 
-a transient model capable of quickly arriving at a heat based 
+a model capable of quickly arriving at a heat based 
 capacity for an arbitrary waste stream. 
 
-More specifically, the Cyder repository model is a type of Facility within 
+More specifically, the Cyder repository model is a type of FacilityModel 
+(see \cite{wilson_cyclus:_2012}) within 
 Cyclus and interfaces with the simulation by requesting materials from the fuel 
 cycle facilities operating simultaneously with it. It the receives materials 
 according to the capacity that it defines. In the case of Cyder, the 
-heat-limited capacity of the repository will be reassessed for each new waste 
+heat-limited capacity of the repository is reassessed for each new waste 
 stream composition offered to the repository.
 
 
