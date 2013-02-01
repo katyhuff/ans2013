@@ -1,67 +1,38 @@
 
 
 \subsubsection{Specific Temperature Change Method}
-Introduced by Radel, Wilson et al., the Specific Temperature Change method uses 
-a linear approximation to arrive at the thermal loading density limit.  
-When the thermal time constant of the rock is much shorter than the waste form 
-decay package, the change in package wall temperature can be described by 
+Introduced by Radel, Wilson et al., the \gls{STC} method uses 
+a linear approximation to arrive at the thermal loading density limit 
+\cite{radel_repository_2007, radel_effect_2007}.  
+Since the thermal response in a system with a long term transient response is strong function of the 
+transient decay power, it is also a strong function of the isotopic 
+composition of the waste. Thus, the time dependent temperature change, $\Delta 
+T$, at the limiting radius, $r_{lim}$, can be approximated as proportional to the 
+mass loading density. First, $\Delta T$ is determined for a limiting loading density 
+of the particular material composition then it is normalized to a single 
+kilogram of that material, $\Delta t$, the so called \gls{STC}. 
 
 \begin{align}
-\Delta T_1 &= q(t_0)\rho_{limit}C'
-\intertext{where}
-\Delta T_1 &= T_{lim} - T_{amb} \nonumber\\
-T_{lim} &= \mbox{ Temperature limit }[^{\circ}C]\nonumber\\
-T_{amb} &= \mbox{ Ambient rock temperature }[^{\circ}C]\nonumber\\
-q(t_0) &= \mbox{ Heat at the initial time} \nonumber \\
-\rho_{limit} &= \frac{C_1}{Q_1}\nonumber\\
-C' &= \mbox{ Thermal constant }[-]\nonumber\\
-\Delta T &= T_{lim}-T_{amb}[^{\circ}C]\nonumber\\
+ \Delta T(r_{lim}) &= m \cdot \Delta t(r_{lim})
+ \label{STC}
+ \intertext{where}
+ \Delta T &= \mbox{ Temperature change due to m }[^{\circ}K]\nonumber\\
+ m &= \mbox{ Mass of heat generating material }[kg]\nonumber \\
+ \Delta t &= \mbox{ Temperature change due to 1 kg }[^{\circ}K]\nonumber\\
+ r_{lim} &= \mbox{ Limiting radius } [m].\nonumber
 \end{align}
 
-Figure \ref{fig:CmScaling} demonstrates the scaling of an STC curve to represent 
-the heat from $25.9g$ of initial $^{242}Cm$. 
-
-\begin{figure}[htp!]
-\begin{center}
-\includegraphics[width=\columnwidth]{images/CmScaling.eps}
-\end{center}
-\caption{As a demonstration of the calculation procedure, the temperature change 
-  curve for one initial gram of $^{242}Cm$ and is scaled to represent $25.9g$, 
-  approximately the $^{242}Cm$ inventory per MTHM in 51GWd burnup UOX PWR fuel. }
-\label{fig:CmScaling}
-\end{figure}
-
-For an arbitrary waste stream 
-composition, scaled curves calculated in this manner can be superimposed for 
-each heat generating isotope to arrive at an approximate total temperature 
-change at the calculation radius. 
-
-To support this calculation in Cyder, a reference data set of temperature change 
-curves, $\Delta t_i$, were calculated for high heat contributing isotopes. These 
-curves were calculated as a function of specified repository spacing, $S$, heat 
-limit radius, $r_{lim}$, and thermal parameters $\alpha_{th}$ and $K_{th}$. The 
-total temperature change is the sum of the mass scaled curves,
+For an arbitrary waste stream composition, scaled curves, $\Delta t_i$, calculated in this 
+manner for individual isotopes can be superimposed for each isotope to arrive at an 
+approximate total temperature change.
 
 \begin{align}
-\Delta T &\sim \sum_{i\in H} m_i \Delta t_i(r,S,K_{th},\alpha_{th})
+ \Delta T (r_{lim}) &\sim \sum_{i} m_i \Delta t_i(r_{lim})
+ \label{superposition}
 \intertext{where}
-\Delta T &= \mbox{ total temperature change in waste }[^{\circ}K]\nonumber\\
-H &= \mbox{ set of high heat isotopes }[-]\nonumber\\
-m_i &= \mbox{ mass of isotope i  } [g]\nonumber\\
-\Delta t_i(r,S,K_{th},\alpha_{th}) &= \mbox{ temperature change due to 1 \textsl{g} of \textsl{i}} [^{\circ}K].\nonumber
-\label{superposition}
+ i &= \mbox{ An isotope in the material } [-]\nonumber\\
+ m_i &= \mbox{ mass of isotope i  } [kg]\nonumber\\
+ \Delta t_i &= \mbox{ Specifc temperature change due to \textsl{i} } [^{\circ}K].\nonumber
 \end{align}
 
-The use of this superposition is demonstrated in Figure 
-\ref{fig:CmSuperposition}.
-
-\begin{figure}[ht!]
-\begin{center}
-\includegraphics[width=\columnwidth]{images/CmSuperposition.eps}
-\end{center}
-\caption{As a demonstration of the calculation procedure, scaled temperature change 
-  curves for two isotopes are superimposed to achieve a total temperature 
-change (note log scale).}
-\label{fig:CmSuperposition}
-\end{figure}
 
