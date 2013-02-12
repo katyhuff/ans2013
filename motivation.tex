@@ -1,0 +1,28 @@
+% Provide a brief description of the importance of the work (what problem it 
+%   addresses/solves):
+
+The United States is simultaneously considering a number of domestic nuclear 
+fuel cycle and geologic disposal options \cite{doe_strategy_2013}.  These decisions are technologically 
+coupled by repository capacity. That is, the thermal capacity of a geologic 
+repository is a strong function of site geology thermal parameters (see Table 
+\ref{tab:heat_tab}) as well as spent fuel composition, which varies among 
+alternative fuel cycles. 
+
+To inform research and development in this coupled system, a generic geologic disposal 
+performance model capable of dynamic integration with a systems analysis 
+framework is necessary to illuminate capacity constraints and dynamic feedback 
+effects of candidate repository geologies in the context of fuel cycle options.
+In answer to this need, the algorithm in this work has been implemented in the 
+Cyder software library which integrates with the Cyclus computational 
+fuel cycle systems analysis platform \cite{huff_cyder_2013,wilson_cyclus:_2012}. 
+
+\input{heat_tab}
+
+A generic repository model appropriate for systems analysis must emphasize 
+modularity and speed while providing modeling options at various levels of 
+detail. Therefore, parameterized simulations and abstraction efforts conducted to develop 
+the method described in this work sought to capture the dominant physics of 
+thermal repository capacity assessment so that the Cyder disposal environment 
+library could meet the simulation speed requirements of the Cyclus fuel cycle 
+simulator.
+
