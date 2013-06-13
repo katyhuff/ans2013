@@ -1,0 +1,67 @@
+%        File: ans_2013_therm_pres.tex
+%     Created: Thu Jun 13 02:00 PM 2013 C
+% Last Change: Thu Jun 13 02:00 PM 2013 C
+%
+%\documentclass[11pt,handout]{beamer}
+\documentclass{beamer}
+\usetheme[white]{Wisconsin}
+%\title[short title]{long title}
+\title[<+  +>]{<++>}
+%\subtitle[short subtitle]{long subtitle}
+\subtitle[<++>]{<++>}
+%\author[short name]{long name}
+\author[<++>]{<++>}
+%\date[short date]{long date}
+\date[<++>]{<++>}
+%\institution[short name]{long name}
+\institute[UW-Madison]{University of Wisconsin-Madison}
+
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% From uw-beamer Here's a handy bit of code to place at 
+%% the beginning of your presentation (after \begin{document}):
+\newcommand*{\alphabet}{ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz}
+\newlength{\highlightheight}
+\newlength{\highlightdepth}
+\newlength{\highlightmargin}
+\setlength{\highlightmargin}{2pt}
+\settoheight{\highlightheight}{\alphabet}
+\settodepth{\highlightdepth}{\alphabet}
+\addtolength{\highlightheight}{\highlightmargin}
+\addtolength{\highlightdepth}{\highlightmargin}
+\addtolength{\highlightheight}{\highlightdepth}
+\newcommand*{\Highlight}{\rlap{\textcolor{HighlightBackground}{\rule[-\highlightdepth]{\linewidth}{\highlightheight}}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%--------------------------------%%
+\frame{
+  \titlepage
+}
+%%--------------------------------%%
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents[part=1,pausesections]
+\end{frame}<++>
+
+\section{<++>}<++>
+\subsection{<++>}<++>
+%%--------------------------------%%
+\begin{frame}[<+ctb!+>]
+\frametitle{<++>}
+\end{frame}<++>
+\subsection{<++>}<++>
+
+%%--------------------------------%%
+\begin{frame}[<+ctb!+>]
+\frametitle{<++>}
+\end{frame}<++>
+
+%%--------------------------------%%
+
+
+\end{document}
+
+
+
+
