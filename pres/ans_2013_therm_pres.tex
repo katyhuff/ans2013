@@ -3,20 +3,40 @@
 % Last Change: Thu Jun 13 02:00 PM 2013 C
 %
 %\documentclass[11pt,handout]{beamer}
-\documentclass{beamer}
+
+\documentclass[9pt]{beamer}
 \usetheme[white]{Wisconsin}
 %\title[short title]{long title}
-\title[<+  +>]{<++>}
+\title[Thermal Analysis in Cyder]{Dynamic Determination of Thermal Repository Capacity for Fuel Cycle Analysis} 
 %\subtitle[short subtitle]{long subtitle}
-\subtitle[<++>]{<++>}
+\subtitle[ANS 2013]{American Nuclear Society Annual Conference 2013}
 %\author[short name]{long name}
-\author[<++>]{<++>}
+\author[K. Huff]{Kathryn Huff$^1$ \& Alexander Bara$^2$}
 %\date[short date]{long date}
-\date[<++>]{<++>}
+\date[6.18.2013]{June 18, 2013}
 %\institution[short name]{long name}
-\institute[UW-Madison]{University of Wisconsin-Madison}
+\institute[UW-Madison\&ANL]{$^1$U. Wisconsin-Madison \& $^{1,2}$Argonne National 
+Laboratory}
 
-
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs} % nice rules for tables
+\usepackage{microtype} % if using PDF
+\usepackage{bigints}
+\newcommand{\units}[1] {\:\text{#1}}%
+\newcommand{\SN}{S$_N$}%{S$_\text{N}$}%{$S_N$}%
+\DeclareMathOperator{\erf}{erf}
+\newcommand{\Cyder}{\textsc{Cyder}\xspace}
+%I need some complimentary error funcitons\ldots 
+\DeclareMathOperator{\erfc}{erfc}
+%page numbers
+\setbeamertemplate{footline}[page number]
+\setbeamertemplate{caption}[numbered]
+%Those icons in the references are terrible looking
+\setbeamertemplate{bibliography item}[text]
 
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -39,27 +59,41 @@
   \titlepage
 }
 %%--------------------------------%%
+\AtBeginSection{
 \begin{frame}
 \frametitle{Outline}
-\tableofcontents[part=1,pausesections]
-\end{frame}<++>
+\tableofcontents[currentsection]
+\end{frame}
+}
 
-\section{<++>}<++>
-\subsection{<++>}<++>
-%%--------------------------------%%
-\begin{frame}[<+ctb!+>]
-\frametitle{<++>}
-\end{frame}<++>
-\subsection{<++>}<++>
+\section{Motivation}
 
-%%--------------------------------%%
-\begin{frame}[<+ctb!+>]
-\frametitle{<++>}
-\end{frame}<++>
+\subsection{Current Fuel Cycle Simulator Tools}
+\input{motiv_current_tools}
+\subsection{Fuel Cycle Options}
+\input{motiv_fuel_cycle_options}
+\subsection{Repository Concepts}
+\input{motiv_concepts}
+\section{Modeling Paradigm}
+\subsection{Cyder Modeling Paradigm}
+\input{paradigm_cyder}
+\subsection{Thermal Modeling Paradigm}
+\input{method_thermal}
+\section{Demonstration}
+\subsection{Base Cases}
+\input{results_thermal_base}
+\subsection{Validation Cases}
+\input{results_thermal_bench}
 
-%%--------------------------------%%
 \input{pres_acks}
 
+\begin{frame}[allowframebreaks]
+  \frametitle{References}
+  \bibliographystyle{plain}
+  {\footnotesize \bibliography{ans_2013_therm}}
+\end{frame}
+
+\input{llnlbackground}
 
 \end{document}
 
